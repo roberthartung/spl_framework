@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and abstract="true" mandatory="true" name="FeatureAmp">
+				<and mandatory="true" name="GUI">
+					<and name="Playlist">
+						<and mandatory="true" name="LoadFolder">
+							<feature name="SearchRecursive"/>
+						</and>
+						<feature name="SaveAndLoadPlaylist"/>
+						<feature name="PlaylistShowCover"/>
+						<or abstract="true" name="OR GROUP">
+							<feature mandatory="true" name="SkipTrack"/>
+							<feature mandatory="true" name="ShuffleRepeat"/>
+							<and mandatory="true" name="RemoveTrack">
+								<feature name="ClearPlaylist"/>
+							</and>
+						</or>
+					</and>
+					<feature name="ShowCover"/>
+					<feature mandatory="true" name="ShowCurrentSong"/>
+					<feature mandatory="true" name="FileMenu"/>
+					<or abstract="true" mandatory="true" name="Time">
+						<feature mandatory="true" name="ShowTime"/>
+						<feature mandatory="true" name="ProgressBar"/>
+					</or>
+					<feature mandatory="true" name="PlayerEngine"/>
+					<and name="VolumeControl">
+						<feature name="Mute"/>
+					</and>
+					<feature mandatory="true" name="Resizable"/>
+					<alt abstract="true" mandatory="true" name="id3">
+						<feature mandatory="true" name="mp3agic"/>
+						<feature mandatory="true" name="farng"/>
+						<feature mandatory="true" name="jaudiotagger"/>
+					</alt>
+				</and>
+			</and>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
